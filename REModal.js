@@ -16,6 +16,7 @@ var Modal = {
         callback: function(callbackObj){},
         callbackObj: null,
         closeSpeed: 500,
+        destroyOnClose: false,
         openSpeed: 700,
         prefix: "REModal-"
     },
@@ -39,6 +40,10 @@ var Modal = {
     close: function(){
         Modal.modalContent.slideUp(Modal.options.closeSpeed);
         Modal.modalOverlay.slideUp(Modal.options.closeSpeed);
+        
+        if (Modal.options.destroyOnClose){
+            Modal.destroy();
+        }
         
         Modal.options.callback(Modal.options.callbackObj);
     },
