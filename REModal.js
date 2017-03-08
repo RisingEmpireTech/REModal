@@ -53,15 +53,17 @@ var Modal = {
         var contentDivId = Modal.options.prefix + "Content";
         var overlayDivId = Modal.options.prefix + "Overlay";
         
-        $('<div>').attr({ 
-            id: contentDivId,
-            class: "REModal-Content"
-        }).prependTo('body');
-        $('<div>').attr({ 
-            id: overlayDivId,
-            class: "REModal-Overlay"
-        }).prependTo('body');
-
+        if ($("#" + overlayDivId).length <= 0){
+            $('<div>').attr({ 
+                id: contentDivId,
+                class: "REModal-Content"
+            }).prependTo('body');
+            $('<div>').attr({ 
+                id: overlayDivId,
+                class: "REModal-Overlay"
+            }).prependTo('body');
+        }
+        
         Modal.modalContent = $("#" + contentDivId);
         Modal.modalOverlay = $("#" + overlayDivId);
     
