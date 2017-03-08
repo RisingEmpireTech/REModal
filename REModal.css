@@ -1,0 +1,31 @@
+/**************************************************************************************** 
+ * 
+ *  Copyright (C) Rising Empire Technologies, Inc - All Rights Reserved
+ *  Unauthorized use, modification or distribution of this work is strictly prohibited.
+ *  Written by:
+ *  Blake Buck <blake@risingempire.tech>, March 2017
+ *
+ ****************************************************************************************/
+
+.REModal-Content {
+    background-color: #F0F0F0;
+    border: solid 1px #888;
+    box-shadow: 4px 4px 10px #333;
+    box-sizing: border-box;
+    display: none;
+    height: 380px;
+    overflow: scroll;
+    position: fixed;
+    width: 550px;
+    z-index: 9001;
+}
+.REModal-Overlay {
+    background-color: #111;
+    cursor: pointer;
+    display: none;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9000;
+}
