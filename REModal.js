@@ -33,6 +33,8 @@ var Modal = {
         Modal.modalContent.css("top", top);
         Modal.modalContent.css("max-height", viewportHeight);
         Modal.modalContent.css("max-width", viewportWidth);
+        
+        Modal.modalOverlay.height($(window).height());
     },
     close: function(){
         Modal.modalContent.slideUp(Modal.options.closeSpeed);
@@ -59,8 +61,7 @@ var Modal = {
         Modal.modalOverlay = $("#" + overlayDivId);
     
         Modal.modalContent.html(htmlContent);
-    
-        Modal.modalOverlay.height($(document).height());
+
         Modal.modalOverlay.click(Modal.hide);
         
         Modal.centerContent();
@@ -81,5 +82,5 @@ var Modal = {
     show: function(){
         // Alias for open
         Modal.open();
-    }  
+    }
 };
