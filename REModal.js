@@ -11,6 +11,8 @@
 
 var Modal = {
     modalContent: null,
+    modaltHeight: 0,
+    modalWidth: 0,
     modalOverlay: null,
     options: {
         callback: function(callbackObj){},
@@ -24,15 +26,12 @@ var Modal = {
         var viewportHeight = $(window).height();
         var viewportWidth = $(window).width();
         
-        var modalHeight = Math.max(Modal.modalContent.height(), parseFloat(Modal.modalContent.css("max-height")));
-        var modalWidth = Math.max(Modal.modalContent.width(), parseFloat(Modal.modalContent.css("max-width")));
+        var Modal.modaltHeight = Math.max(Modal.modalContent.height(), Modal.modalContentHeight);
+        var Modal.modalWidth = Math.max(Modal.modalContent.width(), Modal.modalContentWidth);
         
-        var left = modalWidth >= viewportWidth ? 0 : (viewportWidth - modalWidth) / 2;
-        var top = modalHeight >= viewportHeight ? 0 : (viewportHeight - modalHeight) / 2;
-        
-        console.log(left);
-        console.log(top);
-        
+        var left = Modal.modalWidth >= viewportWidth ? 0 : (viewportWidth - Modal.modalWidth) / 2;
+        var top = Modal.modaltHeight >= viewportHeight ? 0 : (viewportHeight - Modal.modaltHeight) / 2;
+
         Modal.modalContent.css("left", left);
         Modal.modalContent.css("top", top);
         Modal.modalContent.css("max-height", viewportHeight);
