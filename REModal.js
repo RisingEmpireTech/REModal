@@ -69,6 +69,8 @@ var Modal = {
         Modal.modalContent = $("#" + contentDivId);
         Modal.modalOverlay = $("#" + overlayDivId);
     
+        Modal.setOptionalDimensions();
+    
         Modal.modalContent.html(htmlContent);
 
         Modal.modalOverlay.click(Modal.hide);
@@ -87,6 +89,14 @@ var Modal = {
     open: function(){
         Modal.modalOverlay.slideDown(Modal.options.openSpeed);
         Modal.modalContent.slideDown(Modal.options.openSpeed);
+    },
+    setOptionalDimensions: function(){
+        if (typeof Modal.options.height !== "undefined"){
+            Modal.modalContent.css("height", Modal.options.height);
+        }
+        if (typeof Modal.options.width !== "undefined"){
+            Modal.modalContent.css("width", Modal.options.width);
+        }
     },
     show: function(){
         // Alias for open
