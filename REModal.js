@@ -30,6 +30,9 @@ var Modal = {
         var left = modalWidth >= viewportWidth ? 0 : (viewportWidth - modalWidth) / 2;
         var top = modalHeight >= viewportHeight ? 0 : (viewportHeight - modalHeight) / 2;
         
+        console.log(left);
+        console.log(top);
+        
         Modal.modalContent.css("left", left);
         Modal.modalContent.css("top", top);
         Modal.modalContent.css("max-height", viewportHeight);
