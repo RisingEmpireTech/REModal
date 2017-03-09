@@ -26,11 +26,11 @@ var Modal = {
         var viewportHeight = $(window).height();
         var viewportWidth = $(window).width();
         
-        var Modal.modalHeight = Math.max(Modal.modalContent.height(), Modal.modalContentHeight);
-        var Modal.modalWidth = Math.max(Modal.modalContent.width(), Modal.modalContentWidth);
+        var Modal.modalHeight = Math.max(Modal.modalContent.height(), Modal.modalHeight);
+        var Modal.modalWidth = Math.max(Modal.modalContent.width(), Modal.modalWidth);
         
         var left = Modal.modalWidth >= viewportWidth ? 0 : (viewportWidth - Modal.modalWidth) / 2;
-        var top = Modal.modaltHeight >= viewportHeight ? 0 : (viewportHeight - Modal.modaltHeight) / 2;
+        var top = Modal.modalHeight >= viewportHeight ? 0 : (viewportHeight - Modal.modalHeight) / 2;
 
         Modal.modalContent.css("left", left);
         Modal.modalContent.css("top", top);
