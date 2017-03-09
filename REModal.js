@@ -26,6 +26,8 @@ var Modal = {
         var viewportHeight = $(window).height();
         var viewportWidth = $(window).width();
         
+        console.log(Modal.modalContent.height());
+        
         Modal.modalHeight = Math.max(Modal.modalContent.height(), Modal.modalHeight);
         Modal.modalWidth = Math.max(Modal.modalContent.width(), Modal.modalWidth);
         
