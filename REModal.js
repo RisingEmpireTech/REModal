@@ -11,7 +11,7 @@
 
 var Modal = {
     modalContent: null,
-    modaltHeight: 0,
+    modalHeight: 0,
     modalWidth: 0,
     modalOverlay: null,
     options: {
@@ -24,22 +24,20 @@ var Modal = {
     },
     centerContent: function(){
         var viewportHeight = $(window).height();
-        var viewportWidth = $(window).width();
-        
-        console.log(Modal.modalContent.height());
+        var viewportWidth = $(window).width();       
         
         Modal.modalHeight = Math.max(Modal.modalContent.height(), Modal.modalHeight);
         Modal.modalWidth = Math.max(Modal.modalContent.width(), Modal.modalWidth);
-        
+
         var left = Modal.modalWidth >= viewportWidth ? 0 : (viewportWidth - Modal.modalWidth) / 2;
         var top = Modal.modalHeight >= viewportHeight ? 0 : (viewportHeight - Modal.modalHeight) / 2;
-
+        
         Modal.modalContent.css("left", left);
         Modal.modalContent.css("top", top);
         Modal.modalContent.css("max-height", viewportHeight);
         Modal.modalContent.css("max-width", viewportWidth);
         
-        Modal.modalOverlay.height($(window).height());
+        Modal.modalOverlay.height(viewportHeight);
     },
     close: function(){
         Modal.modalContent.slideUp(Modal.options.closeSpeed);
