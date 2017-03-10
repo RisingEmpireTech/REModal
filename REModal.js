@@ -42,12 +42,12 @@ var Modal = {
     close: function(){
         Modal.modalContent.slideUp(Modal.options.closeSpeed);
         Modal.modalOverlay.slideUp(Modal.options.closeSpeed);
+                   
+        Modal.options.callback(Modal.options.callbackObj);
         
         if (Modal.options.destroyOnClose){
             Modal.destroy();
         }
-        
-        Modal.options.callback(Modal.options.callbackObj);
     },
     create: function(htmlContent, options){
         $.extend(Modal.options, options);
