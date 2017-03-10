@@ -79,6 +79,12 @@ var Modal = {
         $(window).resize(Modal.centerContent);
     },
     destroy: function(){
+        Modal.options.callback = function(callbackObj){};
+        Modal.options.callbackObj = null;
+        Modal.options.closeSpeed = 500;
+        Modal.options.destroyOnClose = false;
+        Modal.options.openSpeed = 700;
+        Modal.options.prefix = "REModal-";
         Modal.modalContent.remove();
         Modal.modalOverlay.remove();
     },
