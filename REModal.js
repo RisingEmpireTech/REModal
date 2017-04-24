@@ -50,8 +50,8 @@ var Modal = {
         }
     },
     create: function(htmlContent, options){
-        Modal.modalHeight: 0;
-        Modal.modalWidth: 0;
+        Modal.modalHeight = 0;
+        Modal.modalWidth = 0;
         $.extend(Modal.options, options);
         
         var contentDivId = Modal.options.prefix + "Content";
