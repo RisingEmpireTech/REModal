@@ -42,8 +42,10 @@ var Modal = {
     close: function(){
         Modal.modalContent.slideUp(Modal.options.closeSpeed);
         Modal.modalOverlay.slideUp(Modal.options.closeSpeed);
-                   
-        Modal.options.callback(Modal.options.callbackObj);
+        
+        if (Modal.options.callback != null){            
+            Modal.options.callback(Modal.options.callbackObj);
+        }
         
         if (Modal.options.destroyOnClose){
             Modal.destroy();
