@@ -16,7 +16,7 @@
     height: 380px;
     overflow: auto;
     position: fixed;
-    transform: translateZ(0); /* This allows fixed position (sort of) */
+    transform: translateZ(0); /* This allows fixed position content (sort of) */
     width: 550px;
     z-index: 9001;
 }
