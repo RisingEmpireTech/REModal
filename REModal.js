@@ -137,6 +137,15 @@ Plastic.modal = {
         Plastic.modal.modalOverlay.slideDown(Plastic.modal.options.openSpeed);
         Plastic.modal.modalContent.slideDown(Plastic.modal.options.openSpeed);
     },
+    resize: function(width, height){
+        if (typeof Plastic.modal.options.height !== "undefined"){
+            Plastic.modal.modalContent.css("height", Plastic.modal.options.height);
+        }
+        if (typeof Plastic.modal.options.width !== "undefined"){
+            Plastic.modal.modalContent.css("width", Plastic.modal.options.width);
+        }
+        Plastic.modal.centerContent();
+    },
     setOptionalDimensions: function(){
         if (typeof Plastic.modal.options.height !== "undefined"){
             Plastic.modal.modalContent.css("height", Plastic.modal.options.height);
