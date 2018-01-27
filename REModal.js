@@ -138,11 +138,11 @@ Plastic.modal = {
         Plastic.modal.modalContent.slideDown(Plastic.modal.options.openSpeed);
     },
     resize: function(width, height){
-        if (typeof Plastic.modal.options.height !== "undefined"){
-            Plastic.modal.modalContent.css("height", Plastic.modal.options.height);
+        if (typeof height !== "undefined"){
+            Plastic.modal.modalContent.css("height", height);
         }
-        if (typeof Plastic.modal.options.width !== "undefined"){
-            Plastic.modal.modalContent.css("width", Plastic.modal.options.width);
+        if (typeof width !== "undefined"){
+            Plastic.modal.modalContent.css("width", width);
         }
         Plastic.modal.centerContent();
     },
