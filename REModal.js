@@ -138,6 +138,8 @@ Plastic.modal = {
         Plastic.modal.modalContent.slideDown(Plastic.modal.options.openSpeed);
     },
     resize: function(width, height){
+        Plastic.modal.modalHeight = 0;
+        Plastic.modal.modalWidth = 0;
         if (typeof height !== "undefined"){
             Plastic.modal.modalContent.css("height", height);
         }
