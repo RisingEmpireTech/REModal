@@ -19,6 +19,7 @@ Plastic.modal = {
     modalWidth: 0,
     modalOverlay: null,
     options: {
+        beforeClose: function(){return true},
         callback: function(callbackObj){},
         callbackObj: null,
         closeSpeed: 500,
@@ -48,16 +49,22 @@ Plastic.modal = {
         Plastic.modal.modalOverlay.height(viewportHeight);
     },
     close: function(){
-        Plastic.modal.modalContent.slideUp(Plastic.modal.options.closeSpeed);
-        Plastic.modal.modalOverlay.slideUp(Plastic.modal.options.closeSpeed);
+        var doClose = Plastic.modal.options.beforeClose(closeModal);
         
-        if (Plastic.modal.options.callback != null){            
-            Plastic.modal.options.callback(Plastic.modal.options.callbackObj);
-        }
+        if (doClose) closeModal();
         
-        if (Plastic.modal.options.destroyOnClose){
-            Plastic.modal.destroy();
-        }
+        function closeModal(){
+            Plastic.modal.modalContent.slideUp(Plastic.modal.options.closeSpeed);
+            Plastic.modal.modalOverlay.slideUp(Plastic.modal.options.closeSpeed);
+
+            if (Plastic.modal.options.callback != null){            
+                Plastic.modal.options.callback(Plastic.modal.options.callbackObj);
+            }
+
+            if (Plastic.modal.options.destroyOnClose){
+                Plastic.modal.destroy();
+            }
+        }        
     },
     /**
           ```js
